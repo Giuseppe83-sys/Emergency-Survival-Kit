@@ -10,6 +10,7 @@ import EmergencyMap from "./pages/Map";
 import Contacts from "./pages/Contacts";
 import Timer from "./pages/Timer";
 import CompassPage from "./pages/Compass";
+import Alerts from "./pages/Alerts";
 import "./App.css";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route path="/contacts" element={<Contacts />} />
             <Route path="/timer" element={<Timer />} />
             <Route path="/compass" element={<CompassPage />} />
+            <Route path="/alerts" element={<Alerts />} />
           </Routes>
           <Navigation />
         </BrowserRouter>

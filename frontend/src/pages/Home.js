@@ -10,7 +10,8 @@ import {
   Map,
   Wifi,
   WifiOff,
-  Shield
+  Shield,
+  Radio
 } from 'lucide-react';
 
 const Home = () => {
@@ -57,7 +58,14 @@ const Home = () => {
       icon: Map, 
       label: t('emergencyMap'),
       color: '#007AFF',
-      description: 'Mark safe zones'
+      description: 'Shelters & Safe zones'
+    },
+    { 
+      path: '/alerts', 
+      icon: Radio, 
+      label: 'Emergency Alerts',
+      color: '#FF9500',
+      description: 'Live broadcasts'
     },
   ];
 
