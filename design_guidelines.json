@@ -1,0 +1,86 @@
+{
+  "theme": "dark",
+  "archetype": "4 (Swiss & High-Contrast)",
+  "design_philosophy": "Brutalist, tactical, function-over-form. Pure black backgrounds to save battery, stark white text for maximum legibility, and signal red for critical actions. Oversized tap targets for use under extreme stress.",
+  "typography": {
+    "heading_font": "JetBrains Mono",
+    "body_font": "IBM Plex Sans",
+    "scales": {
+      "h1": "text-4xl sm:text-5xl font-bold tracking-tighter uppercase",
+      "h2": "text-2xl sm:text-3xl font-bold tracking-tight uppercase",
+      "h3": "text-xl font-semibold uppercase tracking-widest",
+      "body": "text-base leading-relaxed",
+      "small": "text-sm tracking-widest uppercase",
+      "timer": "text-6xl sm:text-7xl font-bold tabular-nums tracking-tighter"
+    },
+    "instructions": "Never use Inter for headings. Ensure all critical metrics (timers, coordinates) use tabular numbers. High contrast is mandatory."
+  },
+  "colors": {
+    "background": "#000000",
+    "surface": "#111111",
+    "surface_elevated": "#1A1A1A",
+    "primary": "#FF3B30",
+    "primary_hover": "#FF5249",
+    "primary_foreground": "#FFFFFF",
+    "warning": "#FFCC00",
+    "warning_foreground": "#000000",
+    "border": "#333333",
+    "border_focus": "#FFFFFF",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "#A1A1AA",
+    "text_muted": "#52525B"
+  },
+  "spacing_and_layout": {
+    "mobile_first": true,
+    "paddings": "Use generous paddings. Minimum p-6 inside cards. p-4 only for dense lists.",
+    "button_sizes": "Huge tap targets. Minimum h-16. Critical buttons like SOS should be h-24 or massive blocks.",
+    "grid_system": {
+      "dashboard": "grid grid-cols-2 gap-4 p-4",
+      "dashboard_spans": "SOS is col-span-2. Map/Compass/Timer are col-span-1 or 2 depending on importance."
+    },
+    "border_radius": "rounded-none (0px) to enforce a brutalist, raw, utilitarian aesthetic. Maximum rounded-sm (2px) for inputs."
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#FF3B30] text-white h-16 text-xl uppercase font-bold tracking-widest hover:bg-[#FF5249] active:scale-[0.98] transition-transform",
+      "secondary": "bg-[#111111] text-white border-2 border-[#333333] h-16 text-lg uppercase font-bold hover:border-white active:scale-[0.98] transition-all",
+      "sos_massive": "w-full h-32 bg-[#FF3B30] text-white text-4xl font-black uppercase tracking-widest animate-pulse shadow-[0_0_30px_rgba(255,59,48,0.4)]"
+    },
+    "cards": {
+      "base": "bg-[#111111] border border-[#333333] p-6 flex flex-col gap-4",
+      "interactive": "hover:border-[#A1A1AA] transition-colors cursor-pointer"
+    },
+    "navigation": {
+      "bottom_bar": "fixed bottom-0 w-full h-20 bg-[#000000] border-t border-[#333333] flex justify-around items-center px-2 pb-safe-area z-50",
+      "nav_item": "flex flex-col items-center gap-1 text-[#A1A1AA] hover:text-white data-[active=true]:text-[#FF3B30]"
+    },
+    "inputs": {
+      "text": "bg-[#000000] border-2 border-[#333333] text-white h-16 px-4 text-lg focus:border-white focus:outline-none placeholder:text-[#52525B]"
+    }
+  },
+  "icons": {
+    "library": "lucide-react",
+    "instructions": "Use lucide-react with strokeWidth={2} or {2.5} for high visibility. Use size={24} or size={32} for main actions."
+  },
+  "motion": {
+    "philosophy": "Minimal, instant. Under stress, users don't want to wait for animations.",
+    "interactions": "Scale down slightly on active (click/tap) for immediate physical feedback.",
+    "alerts": "Use slow pulse for active states like SOS or Countdown."
+  },
+  "media": {
+    "image_urls": [],
+    "instructions": "Do not use generic placeholder images. Rely on Typography, pure CSS geometric shapes, and Lucide icons to save bandwidth and ensure instant offline loading."
+  },
+  "accessibility": {
+    "contrast": "Strict adherence to WCAG AAA. White on pure black is >15:1. Red on black must be tested for visibility.",
+    "testing": "All interactive elements must have data-testid. e.g., data-testid='sos-trigger-button', data-testid='nav-map-tab'."
+  },
+  "instructions_to_main_agent": [
+    "PWA & Offline: You MUST implement next-pwa or vite-plugin-pwa to ensure 100% offline functionality. Service workers must cache all assets.",
+    "MapLibre GL JS: The emergency map must use MapLibre GL JS. Implement caching for map tiles so it works offline. Use a dark/tactical map style.",
+    "Local Storage: All user data (Go-bag checklist, safe zones, emergency contacts) MUST be stored in IndexedDB or localStorage.",
+    "Flashlight/Morse: Use the Web Torch API (MediaStreamTrack) if available to trigger the actual device flashlight for the SOS feature.",
+    "Language Support: Implement a simple dictionary object or react-i18next for the 5 requested languages. Default to English.",
+    "Styling: Stick strictly to the brutalist, 0px border-radius, pure black/red/white palette. Avoid gradients or soft shadows."
+  ]
+}
