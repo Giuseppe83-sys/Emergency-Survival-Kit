@@ -1,34 +1,100 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Global app styles */
+.App {
+  min-height: 100vh;
+  background-color: #000000;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+/* Typography */
+h1, h2, h3 {
+  font-family: 'JetBrains Mono', monospace;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+/* Brutalist button base */
+.btn-brutal {
+  border-radius: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.1s ease;
 }
 
-.App-link {
-    color: #61dafb;
+.btn-brutal:active {
+  transform: scale(0.98);
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* SOS button specific */
+.sos-btn {
+  background-color: #FF3B30;
+  color: white;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  box-shadow: 0 0 30px rgba(255, 59, 48, 0.4);
+}
+
+.sos-btn:hover {
+  background-color: #FF5249;
+}
+
+.sos-btn.active {
+  animation: pulse 1s infinite;
+}
+
+/* Card styles */
+.card-brutal {
+  background-color: #111111;
+  border: 1px solid #333333;
+  border-radius: 0;
+}
+
+.card-brutal:hover {
+  border-color: #A1A1AA;
+}
+
+/* Navigation styles */
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: #A1A1AA;
+  transition: color 0.15s ease;
+}
+
+.nav-item:hover {
+  color: #FFFFFF;
+}
+
+.nav-item.active {
+  color: #FF3B30;
+}
+
+/* Form input styles */
+.input-brutal {
+  background-color: #000000;
+  border: 2px solid #333333;
+  border-radius: 0;
+  color: #FFFFFF;
+  height: 56px;
+  padding: 0 16px;
+  font-size: 1rem;
+}
+
+.input-brutal:focus {
+  border-color: #FFFFFF;
+  outline: none;
+}
+
+.input-brutal::placeholder {
+  color: #52525B;
+}
+
+/* Custom marker styles for map */
+.custom-marker {
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.custom-marker:hover {
+  transform: scale(1.1);
 }
