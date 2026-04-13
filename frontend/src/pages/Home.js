@@ -10,7 +10,6 @@ import {
   Map,
   Wifi,
   WifiOff,
-  Shield,
   Radio
 } from 'lucide-react';
 
@@ -74,9 +73,11 @@ const Home = () => {
       {/* Header */}
       <header className="px-4 pt-6 pb-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 bg-[#FF3B30] flex items-center justify-center">
-            <Shield size={28} strokeWidth={2.5} />
-          </div>
+          <img 
+            src="/logo192.png" 
+            alt="Emergency Kit Logo" 
+            className="w-14 h-14 object-contain"
+          />
           <div>
             <h1 
               className="text-xl font-bold uppercase tracking-tight font-mono"
