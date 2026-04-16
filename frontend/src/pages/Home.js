@@ -146,6 +146,16 @@ const Home = () => {
           Offline Mode - All Features Available
         </div>
       )}
+
+      {/* Privacy Policy Link */}
+      <div className="px-4 py-4 text-center">
+        <Link 
+          to="/privacy" 
+          className="text-xs text-[#52525B] hover:text-[#A1A1AA] transition-colors"
+        >
+          Privacy Policy
+        </Link>
+      </div>
     </div>
   );
 };

@@ -11,6 +11,7 @@ import Contacts from "./pages/Contacts";
 import Timer from "./pages/Timer";
 import CompassPage from "./pages/Compass";
 import Alerts from "./pages/Alerts";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import "./App.css";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             <Route path="/timer" element={<Timer />} />
             <Route path="/compass" element={<CompassPage />} />
             <Route path="/alerts" element={<Alerts />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
           </Routes>
           <Navigation />
         </BrowserRouter>
